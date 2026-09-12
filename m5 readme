@@ -1,0 +1,5 @@
+Consulta 1 (Tabla Modelo para Power BI): Unimos la tabla de hechos ventas con clientes y productos usando INNER JOIN. Traemos campos descriptivos de filtrado (como region y segmento) y calculamos en línea la columna total_venta.
+Consultas 2 y 3 (Auditoría de NULLs): Usamos LEFT JOIN partiendo de la tabla maestro (clientes / productos) hacia la tabla de hechos ventas. La condición WHERE v.venta_id IS NULL filtra las filas que no tuvieron correspondencia en la tabla de transacciones.
+Consulta 4 (Canal Literal + UNION ALL):
+Asignamos la columna sintética 'Online' AS canal y 'Presencial' AS canal como cadenas fijas dentro del SELECT.
+Envolvemos el UNION ALL dentro de una CTE (Common Table Expression) con WITH para luego aplicar el GROUP BY canal final exigido por la consigna.
